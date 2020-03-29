@@ -1,7 +1,7 @@
 body {
   color: #000099;
   font-family: arial;
-  font-size: 26px;
+  font-size: 20px;
   max-width: 700px;
   margin: 0 auto;
   padding: 0 16px;
@@ -27,11 +27,11 @@ header {
 }
 
 h1 {
-  font-size: 64px;
+  font-size: 60px;
   margin-bottom: 16px;
 }
 
-header a {
+a {
   color: #000066;
   margin-right: 16px;
   text-decoration: none;
@@ -48,7 +48,7 @@ header {
 
 .portrait {
   display: block;
-  width: 250px;
+  width: 200px;
   margin: auto;
 }
 
@@ -59,7 +59,7 @@ header {
 
 form input,
 form button {
-  font-size: 20px;
+  font-size: 18px;
   padding: 12px 20px;
   border-radius: 10px;
   border: none;
@@ -70,6 +70,7 @@ input {
   box-sizing: border-box;
   color: #000aaa;
   text-transform: uppercase;
+  margin: 10px;
 }
 
 button {
@@ -90,4 +91,21 @@ button:active {
   color: wheat;
   box-shadow: 0 1px #333;
   transform: translateY(4px);
+}
+
+#btn2 {
+  font-size: 30px;
+  border-radius: 20px;
+  background-color: #87ceeb;
+  padding: 10px;
+  display: inline-block;
+}
+
+#btn2:hover {
+  background-color: #000066;
+}
+
+#btn2:active {
+  background-color: black;
+  color: wheat;
 }
