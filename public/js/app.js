@@ -11,26 +11,24 @@ weatherForm.addEventListener("submit", e => {
 
   subtitle.textContent = "loading...";
 
-  fetch("http://localhost:3000/weather?adress=" + search.value).then(
-    response => {
-      response.json().then(data => {
-        if (data.error) {
-          subtitle.textContent = "ERROR";
-          msg1.textContent = data.error.toUpperCase();
-          msg2.textContent = "";
-          msg3.textContent = "";
-          msg4.textContent = "";
-        } else {
-          subtitle.textContent = data.city.toUpperCase();
-          msg1.textContent = "SUMMARY: " + data.summary.toUpperCase();
-          msg2.textContent = "TEMPERATURE: " + data.temperature + "\xB0";
-          msg3.textContent = "FEELS LIKE " + data.feelsLike + "\xB0";
-          msg4.textContent =
-            "PROBABILITY OF PRECIPITATION: " +
-            data.precipitationProbability +
-            "%";
-        }
-      });
-    }
-  );
+  fetch("/weather?adress=" + search.value).then(response => {
+    response.json().then(data => {
+      if (data.error) {
+        subtitle.textContent = "ERROR";
+        msg1.textContent = data.error.toUpperCase();
+        msg2.textContent = "";
+        msg3.textContent = "";
+        msg4.textContent = "";
+      } else {
+        subtitle.textContent = data.city.toUpperCase();
+        msg1.textContent = "SUMMARY: " + data.summary.toUpperCase();
+        msg2.textContent = "TEMPERATURE: " + data.temperature + "\xB0";
+        msg3.textContent = "FEELS LIKE " + data.feelsLike + "\xB0";
+        msg4.textContent =
+          "PROBABILITY OF PRECIPITATION: " +
+          data.precipitationProbability +
+          "%";
+      }
+    });
+  });
 });
