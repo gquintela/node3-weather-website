@@ -121,7 +121,7 @@ button:active {
   /* grid-template-columns: 180px 500px;
   grid-template-rows: repeat(7, 120px); */
   grid-template-columns: auto;
-  grid-template-rows: repeat(7, 70px 130px);
+  grid-template-rows: repeat(7, 70px 145px);
   /* grid-column-gap: 5px; */
   /* grid-row-gap: 15px; */
 }
