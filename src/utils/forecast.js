@@ -1,4 +1,5 @@
 const request = require("request");
+const getMyDate = require("./getMyDate");
 
 const getUrlForecast = geoData => {
   const forecastBaseUrl = "https://api.darksky.net/forecast/";
@@ -17,6 +18,7 @@ const getUrlForecast = geoData => {
 
 const forecast = (geoData, callback) => {
   const forecastUrl = getUrlForecast(geoData);
+  console.log(forecastUrl);
   request({ url: forecastUrl, json: true }, (error, data) => {
     if (error) {
       callback("Unable to connect to the API.", undefined);
@@ -38,8 +40,9 @@ const handleDataForecast = (error, data) => {
       city: data.city,
       temperature: data.body.currently.temperature,
       feelsLike: data.body.currently.apparentTemperature,
-      summary: data.body.currently.summary,
-      precipitationProbability: data.body.currently.precipProbability
+      summary: data.body.daily.summary,
+      precipitationProbability: data.body.currently.precipProbability,
+      extended: extendedWeather(data.body.daily.data)
     };
     console.log("weather data retrieved!");
     console.log(dataWeather);
@@ -49,6 +52,29 @@ const handleDataForecast = (error, data) => {
     console.log(msg);
     return {};
   }
+};
+
+const extendedWeather = data => {
+  let answer = [];
+  let forecast = "";
+  for (let i = 1; i < data.length; i++) {
+    date = getMyDate(data[i].time);
+    forecast =
+      data[i].summary +
+      "\n" +
+      "Min: " +
+      data[i].temperatureMin +
+      "\xB0\n" +
+      "Max: " +
+      data[i].temperatureMax +
+      "\xB0\n" +
+      "Precipitation probability: " +
+      data[i].precipProbability +
+      "%.";
+    answer.push({ date: date, forecast: forecast });
+  }
+  debugger;
+  return answer;
 };
 
 module.exports = { forecast, handleDataForecast };

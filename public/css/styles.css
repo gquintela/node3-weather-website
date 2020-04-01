@@ -31,6 +31,10 @@ h1 {
   margin-bottom: 16px;
 }
 
+h3 {
+  font-size: 2em;
+}
+
 a {
   color: #000066;
   margin-right: 16px;
@@ -108,4 +112,71 @@ button:active {
 #btn2:active {
   background-color: black;
   color: wheat;
+}
+
+/* extended forecast styles...... */
+
+#extended-container {
+  display: grid; /* or inline-flex */
+  /* grid-template-columns: 180px 500px;
+  grid-template-rows: repeat(7, 120px); */
+  grid-template-columns: auto;
+  grid-template-rows: repeat(7, 70px 130px);
+  /* grid-column-gap: 5px; */
+  /* grid-row-gap: 15px; */
+}
+
+.dayName {
+  display: block;
+  align-self: end;
+  /* border: 1px solid red; */
+  padding: 20px;
+  font-size: 26px;
+  text-emphasis: emphasis;
+  -webkit-text-stroke-width: thin;
+}
+
+.description {
+  display: block;
+  padding: 20px 10px;
+  align-self: stretch;
+  justify-self: center;
+  text-transform: uppercase;
+
+  white-space: pre-line;
+}
+
+#extended-forecast {
+  margin-top: 50px;
+}
+
+#extended-title {
+  -webkit-text-stroke-width: thin;
+  font-size: 1.75em;
+}
+
+.backColor {
+  /* color: #444444;
+  background: #f3f3f3;
+  border: 1px #dadada solid;
+  padding: 5px 10px;
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 9pt;
+  outline: none;
+   */
+  color: #000066;
+  background: #4c8ffb;
+  border: 1px #3079ed solid;
+  box-shadow: inset 0 1px 0 #80b0fb;
+  border-radius: 20px;
+  /* opacity: 0.75; */
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  transform: scale(0);
 }
