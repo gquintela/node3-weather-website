@@ -87,7 +87,8 @@ button {
 
 button:hover {
   color: #32ceeb;
-  background-color: #191970; /*midnight */
+  background-color: #191970;
+  /*midnight */
 }
 
 button:active {
@@ -117,11 +118,12 @@ button:active {
 /* extended forecast styles...... */
 
 #extended-container {
-  display: grid; /* or inline-flex */
+  display: grid;
+  /* or inline-flex */
   /* grid-template-columns: 180px 500px;
   grid-template-rows: repeat(7, 120px); */
   grid-template-columns: auto;
-  grid-template-rows: repeat(7, 70px 145px);
+  grid-template-rows: repeat(7, 120px 145px);
   /* grid-column-gap: 5px; */
   /* grid-row-gap: 15px; */
 }
@@ -134,15 +136,16 @@ button:active {
   font-size: 26px;
   text-emphasis: emphasis;
   -webkit-text-stroke-width: thin;
+  /* margin: 20px; */
 }
 
 .description {
   display: block;
-  padding: 20px 10px;
-  align-self: stretch;
+  padding: 20px;
+  align-self: center;
   justify-self: center;
   text-transform: uppercase;
-
+  line-height: 30px;
   white-space: pre-line;
 }
 
@@ -179,4 +182,8 @@ button:active {
 
 .hide {
   transform: scale(0);
+}
+
+#current-container {
+  background-color: #6c8fff;
 }

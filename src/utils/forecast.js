@@ -19,7 +19,10 @@ const getUrlForecast = geoData => {
 const forecast = (geoData, callback) => {
   const forecastUrl = getUrlForecast(geoData);
   console.log(forecastUrl);
-  request({ url: forecastUrl, json: true }, (error, data) => {
+  request({
+    url: forecastUrl,
+    json: true
+  }, (error, data) => {
     if (error) {
       callback("Unable to connect to the API.", undefined);
     } else {
@@ -38,6 +41,8 @@ const handleDataForecast = (error, data) => {
     dataWeather = {
       query: data.query,
       city: data.city,
+      todayMin: data.body.daily.data[0].temperatureMin,
+      todayMax: data.body.daily.data[0].temperatureMax,
       temperature: data.body.currently.temperature,
       feelsLike: data.body.currently.apparentTemperature,
       summary: data.body.daily.summary,
@@ -68,13 +73,19 @@ const extendedWeather = data => {
       "Max: " +
       data[i].temperatureMax +
       "\xB0\n" +
-      "Precipitation probability: " +
+      "Precip. probability: " +
       data[i].precipProbability +
       "%.";
-    answer.push({ date: date, forecast: forecast });
+    answer.push({
+      date: date,
+      forecast: forecast
+    });
   }
   debugger;
   return answer;
 };
 
-module.exports = { forecast, handleDataForecast };
+module.exports = {
+  forecast,
+  handleDataForecast
+};

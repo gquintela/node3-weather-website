@@ -1,3 +1,6 @@
+const location2 = document.querySelector("#location");
+location2.select()
+
 const weatherForm = document.querySelector("form");
 const search = document.querySelector("input");
 const msg1 = document.querySelector("#msg1");
@@ -42,12 +45,9 @@ weatherForm.addEventListener("submit", e => {
       } else {
         subtitle.textContent = data.city.toUpperCase();
         msg1.textContent = "SUMMARY: " + data.summary.toUpperCase();
-        msg2.textContent = "TEMPERATURE: " + data.temperature + "\xB0";
-        msg3.textContent = "FEELS LIKE " + data.feelsLike + "\xB0";
-        msg4.textContent =
-          "PROBABILITY OF PRECIPITATION: " +
-          data.precipitationProbability +
-          "%";
+        msg2.textContent = "FEELS LIKE " + data.feelsLike + "\xB0";
+        msg3.textContent = "MIN:: " + data.todayMin + "\xB0";
+        msg4.textContent = "MAX: " + data.todayMax + "\xB0";
         extendedTitle.textContent = "EXTENDED FORECAST";
         day1name.textContent = data.extended[0].date;
         day2name.textContent = data.extended[1].date;
