@@ -132,7 +132,7 @@ button:active {
   display: block;
   align-self: end;
   /* border: 1px solid red; */
-  padding: 20px;
+  padding: 25px;
   font-size: 26px;
   text-emphasis: emphasis;
   -webkit-text-stroke-width: thin;
