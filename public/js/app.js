@@ -3,6 +3,7 @@ location2.select()
 
 const weatherForm = document.querySelector("form");
 const search = document.querySelector("input");
+const iconNow = document.querySelector("#iconNow")
 const msg1 = document.querySelector("#msg1");
 const msg2 = document.querySelector("#msg2");
 const msg3 = document.querySelector("#msg3");
@@ -14,13 +15,20 @@ const day4name = document.querySelector("#day4name");
 const day5name = document.querySelector("#day5name");
 const day6name = document.querySelector("#day6name");
 const day7name = document.querySelector("#day7name");
-const day1description = document.querySelector("#day1-description");
-const day2description = document.querySelector("#day2-description");
-const day3description = document.querySelector("#day3-description");
-const day4description = document.querySelector("#day4-description");
-const day5description = document.querySelector("#day5-description");
-const day6description = document.querySelector("#day6-description");
-const day7description = document.querySelector("#day7-description");
+const icon1 = document.querySelector("#icon1")
+const icon2 = document.querySelector("#icon2")
+const icon3 = document.querySelector("#icon3")
+const icon4 = document.querySelector("#icon4")
+const icon5 = document.querySelector("#icon5")
+const icon6 = document.querySelector("#icon6")
+const icon7 = document.querySelector("#icon7")
+const day1descriptionText = document.querySelector("#day1-descriptionText");
+const day2descriptionText = document.querySelector("#day2-descriptionText");
+const day3descriptionText = document.querySelector("#day3-descriptionText");
+const day4descriptionText = document.querySelector("#day4-descriptionText");
+const day5descriptionText = document.querySelector("#day5-descriptionText");
+const day6descriptionText = document.querySelector("#day6-descriptionText");
+const day7descriptionText = document.querySelector("#day7-descriptionText");
 const extendedTitle = document.querySelector("#extended-title");
 
 const extended_title = document.querySelector("#extended-title");
@@ -44,9 +52,17 @@ weatherForm.addEventListener("submit", e => {
         $("#msg1").removeClass("hide");
       } else {
         subtitle.textContent = data.city.toUpperCase();
+        iconNow.src = `../img/icons/${data.todayIcon}.png`
+        icon1.src = `../img/icons/${data.extended[0].icon}.png`
+        icon2.src = `../img/icons/${data.extended[1].icon}.png`
+        icon3.src = `../img/icons/${data.extended[2].icon}.png`
+        icon4.src = `../img/icons/${data.extended[3].icon}.png`
+        icon5.src = `../img/icons/${data.extended[4].icon}.png`
+        icon6.src = `../img/icons/${data.extended[5].icon}.png`
+        icon7.src = `../img/icons/${data.extended[6].icon}.png`
         msg1.textContent = "SUMMARY: " + data.summary.toUpperCase();
-        msg2.textContent = "FEELS LIKE " + data.feelsLike + "\xB0";
-        msg3.textContent = "MIN:: " + data.todayMin + "\xB0";
+        msg2.textContent = "FEELS LIKE " + data.feelsLike + "\xB0.";
+        msg3.textContent = "MIN: " + data.todayMin + "\xB0";
         msg4.textContent = "MAX: " + data.todayMax + "\xB0";
         extendedTitle.textContent = "EXTENDED FORECAST";
         day1name.textContent = data.extended[0].date;
@@ -56,13 +72,13 @@ weatherForm.addEventListener("submit", e => {
         day5name.textContent = data.extended[4].date;
         day6name.textContent = data.extended[5].date;
         day7name.textContent = data.extended[6].date;
-        day1description.textContent = data.extended[0].forecast;
-        day2description.textContent = data.extended[1].forecast;
-        day3description.textContent = data.extended[2].forecast;
-        day4description.textContent = data.extended[3].forecast;
-        day5description.textContent = data.extended[4].forecast;
-        day6description.textContent = data.extended[5].forecast;
-        day7description.textContent = data.extended[6].forecast;
+        day1descriptionText.textContent = data.extended[0].forecast;
+        day2descriptionText.textContent = data.extended[1].forecast;
+        day3descriptionText.textContent = data.extended[2].forecast;
+        day4descriptionText.textContent = data.extended[3].forecast;
+        day5descriptionText.textContent = data.extended[4].forecast;
+        day6descriptionText.textContent = data.extended[5].forecast;
+        day7descriptionText.textContent = data.extended[6].forecast;
 
         $(".description").addClass("backColor");
         $("#extended-forecast").removeClass("hide");

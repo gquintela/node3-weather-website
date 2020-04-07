@@ -52,13 +52,12 @@ header {
 
 .portrait {
   display: block;
-  width: 200px;
+  width: 300px;
   margin: auto;
 }
 
 .main-content {
   flex-grow: 1;
-  /* display: flez; */
 }
 
 form input,
@@ -88,7 +87,6 @@ button {
 button:hover {
   color: #32ceeb;
   background-color: #191970;
-  /*midnight */
 }
 
 button:active {
@@ -119,24 +117,15 @@ button:active {
 
 #extended-container {
   display: grid;
-  /* or inline-flex */
-  /* grid-template-columns: 180px 500px;
-  grid-template-rows: repeat(7, 120px); */
-  grid-template-columns: auto;
-  grid-template-rows: repeat(7, 120px 145px);
-  /* grid-column-gap: 5px; */
-  /* grid-row-gap: 15px; */
 }
 
 .dayName {
   display: block;
   align-self: end;
-  /* border: 1px solid red; */
   padding: 25px;
   font-size: 26px;
   text-emphasis: emphasis;
   -webkit-text-stroke-width: thin;
-  /* margin: 20px; */
 }
 
 .description {
@@ -159,21 +148,11 @@ button:active {
 }
 
 .backColor {
-  /* color: #444444;
-  background: #f3f3f3;
-  border: 1px #dadada solid;
-  padding: 5px 10px;
-  border-radius: 2px;
-  font-weight: bold;
-  font-size: 9pt;
-  outline: none;
-   */
   color: #000066;
   background: #4c8ffb;
   border: 1px #3079ed solid;
   box-shadow: inset 0 1px 0 #80b0fb;
   border-radius: 20px;
-  /* opacity: 0.75; */
 }
 
 .show {
@@ -186,4 +165,10 @@ button:active {
 
 #current-container {
   background-color: #6c8fff;
+}
+
+.imgWeather {
+  width: 100px;
+  margin: auto;
+  padding: 0px 10px 15px 10px;
 }

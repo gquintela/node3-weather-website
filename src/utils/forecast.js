@@ -41,12 +41,13 @@ const handleDataForecast = (error, data) => {
     dataWeather = {
       query: data.query,
       city: data.city,
-      todayMin: data.body.daily.data[0].temperatureMin,
-      todayMax: data.body.daily.data[0].temperatureMax,
-      temperature: data.body.currently.temperature,
-      feelsLike: data.body.currently.apparentTemperature,
+      todayIcon: data.body.daily.icon,
+      todayMin: Math.round(data.body.daily.data[0].temperatureMin),
+      todayMax: Math.round(data.body.daily.data[0].temperatureMax),
+      temperature: Math.round(data.body.currently.temperature),
+      feelsLike: Math.round(data.body.currently.apparentTemperature),
       summary: data.body.daily.summary,
-      precipitationProbability: data.body.currently.precipProbability,
+      precipitationProbability: (parseFloat(data.body.currently.precipProbability) * 100),
       extended: extendedWeather(data.body.daily.data)
     };
     console.log("weather data retrieved!");
@@ -59,26 +60,29 @@ const handleDataForecast = (error, data) => {
   }
 };
 
+
 const extendedWeather = data => {
   let answer = [];
   let forecast = "";
   for (let i = 1; i < data.length; i++) {
     date = getMyDate(data[i].time);
+    icon = data[i].icon
     forecast =
       data[i].summary +
       "\n" +
       "Min: " +
-      data[i].temperatureMin +
+      Math.round(data[i].temperatureMin) +
       "\xB0\n" +
       "Max: " +
-      data[i].temperatureMax +
+      Math.round(data[i].temperatureMax) +
       "\xB0\n" +
       "Precip. probability: " +
-      data[i].precipProbability +
+      parseFloat(data[i].precipProbability) * 100 +
       "%.";
     answer.push({
       date: date,
-      forecast: forecast
+      forecast: forecast,
+      icon: icon
     });
   }
   debugger;
