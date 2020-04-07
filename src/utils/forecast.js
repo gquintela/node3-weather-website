@@ -39,6 +39,7 @@ const handleDataForecast = (error, data) => {
     return {};
   } else if (data.body.error === undefined) {
     dataWeather = {
+
       query: data.query,
       city: data.city,
       todayIcon: data.body.daily.icon,
@@ -64,7 +65,7 @@ const handleDataForecast = (error, data) => {
 const extendedWeather = data => {
   let answer = [];
   let forecast = "";
-  for (let i = 1; i < data.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     date = getMyDate(data[i].time);
     icon = data[i].icon
     forecast =

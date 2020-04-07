@@ -9,6 +9,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-image: url("../img/background.jpg");
+  background-image: linear-gradient(#9ABEE5, #D8F0F0);
   background-size: cover;
   text-align: center;
 }
@@ -102,6 +103,8 @@ button:active {
   background-color: #87ceeb;
   padding: 10px;
   display: inline-block;
+  background-color: #EAEAEA;
+  border: 2px solid;
 }
 
 #btn2:hover {
