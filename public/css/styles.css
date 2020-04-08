@@ -9,7 +9,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-image: url("../img/background.jpg");
-  background-image: linear-gradient(#9ABEE5, #D8F0F0);
+  background-image: linear-gradient(#9abee5, #d8f0f0);
   background-size: cover;
   text-align: center;
 }
@@ -78,7 +78,6 @@ input {
   outline: none;
 }
 
-
 button {
   background-color: #000aaa;
   color: #87ceeb;
@@ -105,7 +104,7 @@ button:active {
   background-color: #87ceeb;
   padding: 10px;
   display: inline-block;
-  background-color: #EAEAEA;
+  background-color: #eaeaea;
   border: 2px solid;
 }
 
@@ -128,9 +127,11 @@ button:active {
   display: block;
   align-self: end;
   padding: 25px;
+  padding-bottom: 10px;
   font-size: 26px;
   text-emphasis: emphasis;
   -webkit-text-stroke-width: thin;
+  margin-top: 35px;
 }
 
 .description {
@@ -141,6 +142,7 @@ button:active {
   text-transform: uppercase;
   line-height: 30px;
   white-space: pre-line;
+  margin-bottom: 30px;
 }
 
 #extended-forecast {
@@ -150,6 +152,7 @@ button:active {
 #extended-title {
   -webkit-text-stroke-width: thin;
   font-size: 1.75em;
+  margin-bottom: 10px;
 }
 
 .backColor {
@@ -175,5 +178,6 @@ button:active {
 .imgWeather {
   width: 100px;
   margin: auto;
+  margin-bottom: -10px;
   padding: 0px 10px 15px 10px;
 }
