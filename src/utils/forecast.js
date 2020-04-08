@@ -42,12 +42,12 @@ const handleDataForecast = (error, data) => {
 
       query: data.query,
       city: data.city,
-      todayIcon: data.body.daily.icon,
+      todayIcon: data.body.currently.icon,
       todayMin: Math.round(data.body.daily.data[0].temperatureMin),
       todayMax: Math.round(data.body.daily.data[0].temperatureMax),
       temperature: Math.round(data.body.currently.temperature),
       feelsLike: Math.round(data.body.currently.apparentTemperature),
-      summary: data.body.daily.summary,
+      summary: data.body.currently.summary,
       precipitationProbability: (parseFloat(data.body.currently.precipProbability) * 100),
       extended: extendedWeather(data.body.daily.data)
     };

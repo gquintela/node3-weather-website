@@ -53,7 +53,7 @@ weatherForm.addEventListener("submit", e => {
         $("#msg1").removeClass("hide");
       } else {
         subtitle.textContent = data.city.toUpperCase();
-        dayNowName.textContent = data.extended[0].date
+        dayNowName.textContent = "TODAY: " + data.extended[0].date
         iconNow.src = `../img/icons/${data.todayIcon}.png`
         icon1.src = `../img/icons/${data.extended[1].icon}.png`
         icon2.src = `../img/icons/${data.extended[2].icon}.png`
