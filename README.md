@@ -1,6 +1,6 @@
 <h1>WEATHER APP USING NODE.JS</h1>
 
-<a href="www.quickweather2020.herokuapp.com"><h2>WEBSITE LINK</h2></a>
+<a href="https://quickweather2020.herokuapp.com/" target="_blank"><h2>WEBSITE LINK</h2></a>
 
 <p>I created a website using <a href="https://darksky.net/">Darksky</a> and <a href="https://www.mapbox.com/">mapbox</a> in order to learn Node.Js</p>
 
